@@ -1,31 +1,31 @@
 import sqlite3
 from selectolax.parser import HTMLParser
 from loguru import logger
-from requests_session import create_session, get_request
-from utils.queries import insert_products
+from template.requests_session import create_session, get_request
+from template.utils.queries import insert_products
 
 
 def extract_products_from_page(html):
     """Извлекает список товаров из HTML страницы"""
-    product_links = html.css('a.product-link')
-    prices = html.css('.price')
+    product_items = html.css('li.product')
     
     products = []
-    for i, link in enumerate(product_links):
-        url = link.attributes.get('href')
-        price = prices[i].text().strip() if i < len(prices) else None
+    for item in product_items:
+        url = item.css_first('a').attributes.get('href')
+        price = item.css_first('span.price').text().strip() if item.css_first('span.price') else None
         
-        products.append((
-            url,        # url
-            None,       # category
-            None,       # sku
-            None,       # name
-            None,       # description
-            price,      # price
-            None,       # old_price
-            'unknown',  # stock_status
-            'links_only'# parse_status
-        ))
+        if url:
+            products.append((
+                url,        # url
+                None,       # category
+                None,       # sku
+                None,       # name
+                None,       # description
+                price,      # price
+                None,       # old_price
+                'unknown',  # stock_status
+                'links_only'# parse_status
+            ))
     return products
 
 
