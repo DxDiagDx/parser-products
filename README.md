@@ -1,4 +1,7 @@
 # parser-products
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-stable-brightgreen.svg)
 
 Минимальный шаблон для парсинга интернет-магазинов с универсальной структурой базы данных.
 
