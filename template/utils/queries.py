@@ -18,12 +18,8 @@ def insert_products(conn, products_data):
             old_price = excluded.old_price,
             stock_status = excluded.stock_status,
             updated_at = CURRENT_TIMESTAMP
-        RETURNING id
     """, products_data)
     conn.commit()
-    
-    ids = [row[0] for row in cursor.fetchall()]
-    return ids[0] if len(ids) == 1 else ids
 
 
 def insert_params(conn, product_id, params_list):

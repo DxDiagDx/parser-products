@@ -33,8 +33,8 @@ def save_products(conn, products):
     """Сохраняет товары в базу"""
     if not products:
         return
-    ids = insert_products(conn, products)
-    logger.info(f"Сохранено {len(ids)} товаров")
+    insert_products(conn, products)
+    logger.info(f"Сохранено {len(products)} товаров")
 
 
 def parse_page(session, url):
