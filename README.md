@@ -12,6 +12,7 @@ parser-products/
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
+├── setup.py
 ├── agents/
 │   └── instructions.md  # Инструкция для AI-агента
 └── template/
