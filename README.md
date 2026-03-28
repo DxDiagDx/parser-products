@@ -36,6 +36,8 @@ parser-products/
 3. Активируйте его и установите зависимости: 
    ```bash
    pip install -r requirements.txt
+   ```
+   ```bash
    pip install -e .
    ```
 4. Скопируйте `template/config.example.py` в `config.py` и настройте под себя
