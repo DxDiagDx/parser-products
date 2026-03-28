@@ -1,6 +1,6 @@
 import sqlite3
 from loguru import logger
-from download_images import download_images_from_db
+from template.download_images import download_images_from_db
 
 
 def update_completed_status(conn):
@@ -20,7 +20,7 @@ def update_completed_status(conn):
 
 
 def main():
-    from config import IMAGES_DIR, PROXY, COOKIES, HEADERS
+    from template.config import IMAGES_DIR, PROXY, COOKIES, HEADERS
     with sqlite3.connect('products.db') as conn:
         logger.info("Начинаем скачивание изображений")
         download_images_from_db(conn, IMAGES_DIR, proxy=PROXY, cookies=COOKIES, headers=HEADERS)

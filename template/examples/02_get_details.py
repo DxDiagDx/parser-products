@@ -1,8 +1,8 @@
 import sqlite3
 from selectolax.parser import HTMLParser
 from loguru import logger
-from requests_session import create_session, get_request
-from utils.queries import insert_params, insert_images
+from template.requests_session import create_session, get_request
+from template.utils.queries import insert_params, insert_images
 
 
 def extract_name(html):
@@ -91,5 +91,5 @@ def parse_all_products():
 
 
 if __name__ == "__main__":
-    from config import PROXY, COOKIES, HEADERS
+    from template.config import PROXY, COOKIES, HEADERS
     parse_all_products()
