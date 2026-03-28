@@ -1,0 +1,8 @@
+.venv/
+*.db
+*.db-journal
+downloaded_images/
+config.py
+__pycache__/
+*.pyc
+.DS_Store
