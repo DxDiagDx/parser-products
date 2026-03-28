@@ -71,7 +71,7 @@ def parse_pagination(session, start_url):
 
 
 if __name__ == "__main__":
-    from config import PROXY, COOKIES, HEADERS
+    from template.config import PROXY, COOKIES, HEADERS
     
     session = create_session(proxy=PROXY, cookies=COOKIES, headers=HEADERS)
     parse_pagination(session, "https://example.com/catalog")
