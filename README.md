@@ -32,21 +32,23 @@ parser-products/
 ## Быстрый старт
 
 1. Клонируйте репозиторий
-2. Создайте виртуальное окружение: `python3 -m venv .venv`
+2. Создайте виртуальное окружение: `python -m venv .venv`
 3. Активируйте его и установите зависимости: 
    ```bash
    pip install -r requirements.txt
    ```
+   Для VSCode и других IDE (кроме PyCharm)
    ```bash
    pip install -e .
    ```
-4. Скопируйте `template/config.example.py` в `config.py` и настройте под себя
+   PyCharm сам предложит установить вируальное окружение и пропишет путь к модулям.
+4. Скопируйте `template/config.example.py` в `config.py` и настройте под себя (опицонально)
 5. Создайте базу данных: `python3 template/init_db.py`
 6. Адаптируйте селекторы в примерах под целевой магазин
 7. Запустите последовательно:
-  - `python3 template/examples/01_get_links.py`
-  - `python3 template/examples/02_get_details.py`
-  - `python3 template/examples/03_download_images.py`
+  - `python template/examples/01_get_links.py`
+  - `python template/examples/02_get_details.py`
+  - `python template/examples/03_download_images.py`
 
 ## Схема базы данных
 
